@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Box from './Box';
 // import winnerChick from './../images/winner.jpg';
+
 export default class Game extends Component {
   state = {
     boxs: Array(9).fill(null),
@@ -74,15 +75,13 @@ export default class Game extends Component {
   };
 
   buildBox(i) {
-    const { winnerWinnerChickenDinner, lastIndex } = this.state;
-    const disabl = i === lastIndex ? true : winnerWinnerChickenDinner;
-    const { boxs } = this.state;
+    const { boxs, winnerWinnerChickenDinner } = this.state;
     return (
       <Box
         vlaue={boxs[i]}
         id={i}
         onclick={this.handleClick}
-        disabled={disabl}
+        disabled={winnerWinnerChickenDinner}
       />
     );
   }
